@@ -6,26 +6,26 @@ public static class Mover
 {
     private static readonly System.Random rand = new System.Random();
 
-    private static double _dicrement;
+    private static double dicrement;
 
     public static double Dicrement
     {
-        get => _dicrement;
+        get => dicrement;
         set
         {
-            _dicrement = value;
-            animationDuration = new Vector3(0, (float)_dicrement, 0);
+            dicrement = value;
+            animationDuration = new Vector3(0, (float)dicrement, 0);
         }
     }
     private static Vector3 animationDuration;
 
-    public static ObservableCollection<GameObject> _platform_Pool = new ObservableCollection<GameObject>();
+    public static ObservableCollection<GameObject> platform_Pool = new ObservableCollection<GameObject>();
 
     public static IEnumerator Move_Platform()
     {
         while (true)
         {
-            foreach (var platform in _platform_Pool)
+            foreach (var platform in platform_Pool)
             {
                 platform.transform.position -= animationDuration;
             }

@@ -11,42 +11,44 @@ public class Platform_Spawn_Script : MonoBehaviour
     public GameObject MainActor;
     public GameObject myPrefab;
 
-    private int _score = 0;
+    private Text Score_ref;
 
+    private int score = 0;
     private int Score
     {
-        get => _score;
+        get => score;
         set
         {
-            State.Setting_state(_score, ref platform_fly_time_duration_increment);
-            _score = value;
+            State.Setting_state(score, ref platform_fly_time_duration_increment);
+            score = value;
         }
     }
 
-    private double _platform_fly_time_duration = 0.005d;
-
+    private double platform_fly_time_duration = 0.005d;
     private double Platform_fly_time_duration
     {
-        get => _platform_fly_time_duration;
+        get => platform_fly_time_duration;
         set
         {
-            _platform_fly_time_duration = value;
-            Mover.Dicrement = Platform_fly_time_duration;
+            platform_fly_time_duration = value;
+            Mover.Dicrement = platform_fly_time_duration;
         }
     }
+
     private double platform_fly_time_duration_increment = 0.08d;
 
-    private const int _max_platform_count = 5;
+    private const int max_platform_count = 5;
 
     private readonly ObservableCollection<GameObject> Platform_Pool = new ObservableCollection<GameObject>();
     private void Platform_Pool_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
     {
-        Mover._platform_Pool = Platform_Pool;
+        Mover.platform_Pool = Platform_Pool;
     }
 
     private void OnEnable()//Start point
     {
         Platform_Pool.CollectionChanged += Platform_Pool_CollectionChanged;
+        Score_ref = Score_obj.GetComponentInChildren<Text>();
 
         StartCoroutine(Score_Ñounting_and_Game_Settings());
         StartCoroutine(Platforme_Spawn());
@@ -62,7 +64,7 @@ public class Platform_Spawn_Script : MonoBehaviour
         {
             Physics2D.gravity -= gravity_index;
 
-            Score_obj.GetComponentInChildren<Text>().text = $"Score : {Score}";
+            Score_ref.text = $"Score : {Score}";
 
             Score++;
 
@@ -79,7 +81,7 @@ public class Platform_Spawn_Script : MonoBehaviour
         StartCoroutine(Mover.Move_Platform());
         while (MainActor.activeSelf && !Background.activeSelf)
         {
-            if (Platform_Pool.Count < _max_platform_count)
+            if (Platform_Pool.Count < max_platform_count)
             {
                 Vector3 Spawn_coordinates = new Vector3(transform.position.x, transform.position.y);
 

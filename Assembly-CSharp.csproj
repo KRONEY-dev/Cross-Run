@@ -55,14 +55,10 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Platform_Spawn_Script.cs" />
     <Compile Include="Assets\Scripts\Mover.cs" />
-    <Compile Include="Assets\Scripts\Start_Button_Stript.cs" />
-    <Compile Include="Assets\Scripts\Die_Screan_Script.cs" />
     <Compile Include="Assets\Scripts\Platform_triger.cs" />
-    <Compile Include="Assets\Scripts\Restart_Button_Script.cs" />
     <Compile Include="Assets\Scripts\State.cs" />
-    <Compile Include="Assets\Scripts\Main_Actor_Script.cs" />
-    <Compile Include="Assets\Scripts\Max_Score_Script.cs" />
     <Compile Include="Assets\Scripts\Control_Palnel_Script.cs" />
+    <Compile Include="Assets\Scripts\Game_Observer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

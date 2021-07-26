@@ -1,5 +1,14 @@
 using UnityEngine;
 
+public enum Speed_States
+{
+    Start,
+    Easy_speed,
+    Normal_speed,
+    High_speed,
+    Infinity_increment
+}
+
 public static class State
 {
     public static Speed_States Current_State { get; private set; }
@@ -69,13 +78,4 @@ public static class State
     {
         Current_State = Speed_States.Start;
     }
-}
-
-public enum Speed_States
-{
-    Start,
-    Easy_speed,
-    Normal_speed,
-    High_speed,
-    Infinity_increment
 }

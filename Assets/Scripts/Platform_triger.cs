@@ -9,15 +9,15 @@ public class Platform_triger : MonoBehaviour
         Die_Or_Reposition(collision.gameObject);
     }
 
-    private void Die_Or_Reposition(GameObject @object)
+    private void Die_Or_Reposition(GameObject Object)
     {
-        if (@object.CompareTag("Player"))
+        if (Object.CompareTag("Player"))
         {
-            @object.SetActive(false);
+            Object.SetActive(false);
         }
-        else if (@object.CompareTag("Platform"))
+        else if (Object.CompareTag("Platform"))
         {
-            @object.transform.position = Mover.Random_Place(new Vector3(@object.transform.position.x, Spawn.transform.position.y, Spawn.transform.position.z));
+            Object.transform.position = Mover.Random_Place(new Vector3(Object.transform.position.x, Spawn.transform.position.y, Spawn.transform.position.z));
         }
     }
 }
