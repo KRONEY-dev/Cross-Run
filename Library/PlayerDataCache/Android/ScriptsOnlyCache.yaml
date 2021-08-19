@@ -2,9 +2,10 @@ ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
     - Control_Palnel_Script
-    - Game_Observer
+    - GameManager
     - Platform_Spawn_Script
     - Platform_triger
+    - Timer_Script
     Unity.2D.Animation.Editor.dll:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.Animation.Runtime.dll:
@@ -31,6 +32,12 @@ ScriptsOnlyBuild:
     - TMPro.TMP_SpriteAsset
     - TMPro.TMP_StyleSheet
     - TMPro.TextMeshProUGUI
+    UnityEditor.Graphs.dll:
+    - UnityEditor.Graphs.AnimationBlendTree.Graph
+    - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.Graph
+    - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
@@ -42,6 +49,7 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
+    - UnityEngine.UI.Slider
     - UnityEngine.UI.Text
   sceneClasses:
     Assets/Scenes/Main_Sceene.unity:
@@ -53,7 +61,13 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 21
       Script: {instanceID: 0}
+    - Class: 23
+      Script: {instanceID: 0}
     - Class: 28
+      Script: {instanceID: 0}
+    - Class: 33
+      Script: {instanceID: 0}
+    - Class: 43
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
@@ -71,40 +85,46 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
+    - Class: 108
+      Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1532}
+      Script: {instanceID: 1540}
     - Class: 114
-      Script: {instanceID: 1600}
+      Script: {instanceID: 1602}
     - Class: 114
-      Script: {instanceID: 1686}
+      Script: {instanceID: 1688}
     - Class: 114
-      Script: {instanceID: 1840}
+      Script: {instanceID: 1730}
     - Class: 114
-      Script: {instanceID: 2218}
+      Script: {instanceID: 1842}
     - Class: 114
-      Script: {instanceID: 2226}
+      Script: {instanceID: 2224}
     - Class: 114
-      Script: {instanceID: 2640}
+      Script: {instanceID: 2232}
     - Class: 114
-      Script: {instanceID: 2800}
+      Script: {instanceID: 2646}
     - Class: 114
-      Script: {instanceID: 2846}
+      Script: {instanceID: 2806}
     - Class: 114
-      Script: {instanceID: 3016}
+      Script: {instanceID: 2852}
     - Class: 114
-      Script: {instanceID: 3122}
+      Script: {instanceID: 3022}
     - Class: 114
-      Script: {instanceID: 3262}
+      Script: {instanceID: 3130}
     - Class: 114
-      Script: {instanceID: 3374}
+      Script: {instanceID: 3270}
     - Class: 114
-      Script: {instanceID: 4022}
+      Script: {instanceID: 3304}
     - Class: 114
-      Script: {instanceID: 4696}
+      Script: {instanceID: 3384}
     - Class: 114
-      Script: {instanceID: 5072}
+      Script: {instanceID: 4710}
     - Class: 114
-      Script: {instanceID: 5370}
+      Script: {instanceID: 4866}
+    - Class: 114
+      Script: {instanceID: 5088}
+    - Class: 114
+      Script: {instanceID: 5384}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -374,6 +394,12 @@ ScriptsOnlyBuild:
     className: MarkerTrack
   - hash:
       serializedVersion: 2
+      Hash: 7bbb6efd32dbc2cff435b17359f4b342
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Timer_Script
+  - hash:
+      serializedVersion: 2
       Hash: 8e6ceabfd38a184413d69b7db56c89cc
     assemblyName: UnityEngine.TestRunner.dll
     namespaceName: UnityEngine.TestTools
@@ -474,12 +500,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: AudioPlayableAsset
-  - hash:
-      serializedVersion: 2
-      Hash: bd2e972340669e8736a8926a3be0915d
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Game_Observer
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -596,6 +616,12 @@ ScriptsOnlyBuild:
     className: SpriteSkinEntity
   - hash:
       serializedVersion: 2
+      Hash: dfa22f71e94b27f1ae7d43a79de35716
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: GameManager
+  - hash:
+      serializedVersion: 2
       Hash: 28cfb4bd305dd11c6326cc3ee7c14138
     assemblyName: Unity.2D.Animation.Runtime.dll
     namespaceName: UnityEngine.Experimental.U2D.Animation
@@ -670,4 +696,4 @@ ScriptsOnlyBuild:
   scenePathNames:
   - Assets/Scenes/Main_Sceene.unity
   playerPath: "C:/Users/super/OneDrive/\u0420\u0430\u0431\u043E\u0447\u0438\u0439
-    \u0441\u0442\u043E\u043B/Cross Run.apk"
+    \u0441\u0442\u043E\u043B/Cross Run 1.1.apk"
