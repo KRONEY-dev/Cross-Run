@@ -14,7 +14,7 @@ public class Timer_Script : MonoBehaviour
             if (value == true)
             {
                 run_timer = true;
-                if (Timer_Mechanism_Curent != null)
+                if (Timer_Mechanism_Curent != null) //if coroutine already start
                 {
                     StopCoroutine(Timer_Mechanism_Curent);
                 }
@@ -32,11 +32,11 @@ public class Timer_Script : MonoBehaviour
     private int Full_Energy_Count;
     private float Timer_Slider_Decriment;
 
-    private static readonly TimeSpan Timer_Full_Time = new TimeSpan(0, 0, 50);
+    private static readonly TimeSpan Timer_Full_Time = new TimeSpan(0, 4, 0);
     private static readonly TimeSpan Timer_Tick = new TimeSpan(0, 0, 1);
     private static readonly TimeSpan Timer_Finish = new TimeSpan(0, 0, 0);
 
-    private TimeSpan Timer = new TimeSpan();//Value overwrite
+    private TimeSpan Timer = new TimeSpan();
 
     private Coroutine Timer_Slider_Mechanism_Curent;
     private Coroutine Timer_Mechanism_Curent;
@@ -63,7 +63,7 @@ public class Timer_Script : MonoBehaviour
 
     private void Load()
     {
-        if (PlayerPrefs.HasKey("Timer_Prefs"))
+        if (PlayerPrefs.HasKey("Timer_Prefs")) //not first start
         {
             TimeSpan Time_Difference = DateTime.Now - DateTime.Parse(PlayerPrefs.GetString("DataTime_Last_Prefs"));
             if (Time_Difference > TimeSpan.Parse(PlayerPrefs.GetString("Timer_Prefs")))
@@ -85,7 +85,7 @@ public class Timer_Script : MonoBehaviour
     public void Timer_Slider_Decriminate()
     {
         Timer_Slider.value -= Timer_Slider_Decriment;
-        if (Timer_Slider_Mechanism_Curent != null)
+        if (Timer_Slider_Mechanism_Curent != null) //if coroutine already start
         {
             StopCoroutine(Timer_Slider_Mechanism_Curent);
         }
