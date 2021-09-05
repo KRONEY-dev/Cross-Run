@@ -58,7 +58,7 @@ public class Platform_Spawn_Script : MonoBehaviour
     {
         Score = 0;
         Vector2 gravity_index = new Vector2(0, 0.1f);
-        Physics2D.gravity = new Vector2(0, -1);
+        Physics2D.gravity = new Vector2(0, -0.1f);
 
         while (MainActor.activeSelf && !Background.activeSelf)
         {
